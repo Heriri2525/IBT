@@ -111,7 +111,7 @@ class SavingsAccount(Account):
         self.deposit(self.balance * self.rate)
 
     def statement(self):
-        print("\n Savings Account 
+        print("\n Savings Account ")
         print(f"Owner: {self.owner}")
         print(f"Account Number: {self.account_number}")
         print(f"Interest Rate: {self.rate * 100:.0f}%")
