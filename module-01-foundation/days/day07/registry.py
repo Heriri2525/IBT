@@ -34,10 +34,13 @@ class Account:
         self.account_number = account_number
         self.__balance = balance
         self._observers = []
-        self.history = []      # Stack
+        self.history = []   # Stack
 
     @property
     def balance(self):
+        return self.__balance
+
+    def _get_balance(self):
         return self.__balance
 
     def _set_balance(self, amount):
@@ -90,7 +93,7 @@ class Account:
         print(f"Undo: {action} {amount} ETB")
 
     def statement(self):
-        print("\n Account ")
+        print("\n===== Account =====")
         print(f"Owner: {self.owner}")
         print(f"Account Number: {self.account_number}")
         print(f"Balance: {self.balance:.2f} ETB")
@@ -103,11 +106,12 @@ class SavingsAccount(Account):
         super().__init__(owner, account_number, balance)
         self.rate = config.interest_rate
 
+    # Add interest
     def add_interest(self):
         self.deposit(self.balance * self.rate)
 
     def statement(self):
-        print("\n Savings Account ")
+        print("\n===== Savings Account =====")
         print(f"Owner: {self.owner}")
         print(f"Account Number: {self.account_number}")
         print(f"Interest Rate: {self.rate * 100:.0f}%")
@@ -133,7 +137,7 @@ class CurrentAccount(Account):
         self._notify(f"{self.owner} withdrew {amount} ETB")
 
     def statement(self):
-        print("\nCurrent Account ")
+        print("\n===== Current Account =====")
         print(f"Owner: {self.owner}")
         print(f"Account Number: {self.account_number}")
         print(f"Overdraft: {self.overdraft} ETB")
@@ -156,26 +160,27 @@ class AccountFactory:
         else:
             raise ValueError("Invalid account type.")
 
-
 # Registry
 
 class AccountRegistry:
 
     def __init__(self):
-        self.accounts = {}
+        self.by_number = {}   # O(1) lookup
+        self.order = []       # Keep insertion order
 
     # Add account
     def add(self, account):
-        self.accounts[account.account_number] = account
+        self.by_number[account.account_number] = account
+        self.order.append(account.account_number)
 
-    # O(1) lookup
+    # Find account
     def find(self, account_number):
-        return self.accounts.get(account_number)
+        return self.by_number.get(account_number)
 
-    # List all accounts
+    # Show all accounts
     def list_all(self):
-        for number in sorted(self.accounts):
-            self.accounts[number].statement()
+        for number in self.order:
+            self.by_number[number].statement()
 
 
 # Test
@@ -202,16 +207,20 @@ acc1.add_interest()
 
 acc2.withdraw(3500)
 
-print("\n Find Account ")
-account = registry.find("ACC001")
-account.statement()
+print("\n===== Find Account =====")
 
-print("\n Undo Transaction ")
+account = registry.find("ACC001")
+if account:
+    account.statement()
+
+print("\n===== Undo Last Transaction =====")
 acc1.undo_last()
 acc1.statement()
 
-print("\n All Accounts ")
+print("\n===== Addis Bank =====")
 registry.list_all()
+
+# Check singleton
 
 config1 = BankConfig()
 config2 = BankConfig()
