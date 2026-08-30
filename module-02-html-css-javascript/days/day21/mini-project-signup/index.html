@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Validated Signup Form</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <main class="container">
+
+        <h1>Signup Form</h1>
+
+        <p>
+            Sign up using your name and Ethiopian phone number.
+        </p>
+
+        <form id="signup">
+
+            <div class="form-group">
+                <label for="name">Full Name</label>
+
+                <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    placeholder="Enter your full name"
+                >
+            </div>
+
+            <div class="form-group">
+                <label for="phone">Ethiopian Phone Number</label>
+
+                <input
+                    type="text"
+                    id="phone"
+                    name="phone"
+                    placeholder="0912345678 or +251912345678"
+                >
+            </div>
+
+            <button type="submit">
+                Sign Up
+            </button>
+
+            <p id="error" class="error"></p>
+
+            <p id="success" class="success"></p>
+
+        </form>
+
+        <div class="signup-info">
+            <h2>Signup Information</h2>
+
+            <p id="count">
+                People signed up: 0
+            </p>
+
+            <ul id="signupList"></ul>
+        </div>
+
+    </main>
+
+    <script src="app.js"></script>
+
+</body>
+</html>

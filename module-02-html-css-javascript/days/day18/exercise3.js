@@ -1,5 +1,3 @@
-// exercise3.js
-
 const customer = {
   name: "Hermela",
   city: "Addis Ababa",

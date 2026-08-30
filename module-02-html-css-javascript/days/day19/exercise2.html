@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise 2 - Create Elements</title>
+</head>
+
+<body>
+
+    <h1>Ethiopian Cities</h1>
+
+    <ul id="cities"></ul>
+
+    <script>
+        const cities = ["Addis Ababa", "Gondar", "Hawassa"];
+
+        const list = document.querySelector("#cities");
+
+        cities.forEach(city => {
+            const li = document.createElement("li");
+
+            li.textContent = city;
+
+            list.append(li);
+        });
+    </script>
+
+</body>
+</html>

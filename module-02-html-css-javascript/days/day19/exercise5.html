@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise 5 - Form Events</title>
+</head>
+
+<body>
+
+    <h1>Add an Item</h1>
+
+    <form id="form">
+
+        <label for="item">Item</label>
+
+        <input
+            type="text"
+            id="item"
+            name="item"
+            required
+        >
+
+        <button type="submit">Add Item</button>
+
+    </form>
+
+    <ul id="list"></ul>
+
+    <script>
+        const form = document.querySelector("#form");
+        const input = document.querySelector("#item");
+        const list = document.querySelector("#list");
+
+        form.addEventListener("submit", (event) => {
+
+            event.preventDefault();
+
+            const text = input.value.trim();
+
+            if (!text) {
+                return;
+            }
+
+            const li = document.createElement("li");
+
+            li.textContent = text;
+
+            list.append(li);
+
+            input.value = "";
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise 4 - Event Delegation</title>
+</head>
+
+<body>
+
+    <h1>Shopping List</h1>
+
+    <ul id="items">
+
+        <li>
+            Coffee
+            <button class="delete">Delete</button>
+        </li>
+
+        <li>
+            Teff
+            <button class="delete">Delete</button>
+        </li>
+
+        <li>
+            Honey
+            <button class="delete">Delete</button>
+        </li>
+
+    </ul>
+
+    <script>
+        const list = document.querySelector("#items");
+
+        list.addEventListener("click", (event) => {
+
+            if (event.target.matches(".delete")) {
+                event.target.closest("li").remove();
+            }
+
+        });
+    </script>
+
+</body>
+</html>

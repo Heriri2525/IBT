@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Search for country facts including capital, population, region, currencies and flag."
+    >
+
+    <title>Country Facts</title>
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>Country Facts</h1>
+
+        <p>
+            Search for information about any country.
+        </p>
+    </header>
+
+    <main>
+
+        <form id="search-form">
+
+            <label for="country">
+                Country Name
+            </label>
+
+            <input
+                type="text"
+                id="country"
+                name="country"
+                value="Ethiopia"
+                placeholder="Enter a country name"
+                required
+            >
+
+            <button type="submit">
+                Search
+            </button>
+
+        </form>
+
+        <section
+            id="facts"
+            aria-live="polite"
+        >
+            <p id="status">Loading...</p>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>
+            Country Facts &copy; 2026
+        </p>
+    </footer>
+
+    <script src="app.js"></script>
+
+</body>
+</html>
