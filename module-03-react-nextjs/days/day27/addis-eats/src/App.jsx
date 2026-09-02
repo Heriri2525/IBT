@@ -1,6 +1,5 @@
-import { useState } from "react";
-import Menu from "./Menu.jsx";
-import menu from "./data.js";
+import Menu from "./Menu";
+import menu from "./data";
 
 function Header() {
   return (
@@ -12,7 +11,7 @@ function Header() {
 }
 
 function App() {
-  const [category, setCategory] = useState("All");
+  const category = "Main";
 
   return (
     <div className="app">
@@ -20,28 +19,6 @@ function App() {
 
       <main>
         <h2>Our Menu</h2>
-
-        <div className="filters">
-          <button onClick={() => setCategory("All")}>
-            All
-          </button>
-
-          <button onClick={() => setCategory("Main")}>
-            Main
-          </button>
-
-          <button onClick={() => setCategory("Side")}>
-            Side
-          </button>
-
-          <button onClick={() => setCategory("Breakfast")}>
-            Breakfast
-          </button>
-
-          <button onClick={() => setCategory("Dessert")}>
-            Dessert
-          </button>
-        </div>
 
         <Menu menu={menu} category={category} />
       </main>
