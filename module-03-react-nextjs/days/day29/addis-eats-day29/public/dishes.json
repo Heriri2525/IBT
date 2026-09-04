@@ -1,0 +1,58 @@
+[
+  {
+    "id": 1,
+    "name": "Doro Wat",
+    "price": 180,
+    "category": "Ethiopian",
+    "spicy": true
+  },
+  {
+    "id": 2,
+    "name": "Tibs",
+    "price": 220,
+    "category": "Ethiopian",
+    "spicy": true
+  },
+  {
+    "id": 3,
+    "name": "Shiro Wat",
+    "price": 140,
+    "category": "Vegetarian",
+    "spicy": true
+  },
+  {
+    "id": 4,
+    "name": "Vegetable Pasta",
+    "price": 160,
+    "category": "Vegetarian",
+    "spicy": false
+  },
+  {
+    "id": 5,
+    "name": "Kitfo",
+    "price": 250,
+    "category": "Ethiopian",
+    "spicy": false
+  },
+  {
+    "id": 6,
+    "name": "Firfir",
+    "price": 130,
+    "category": "Breakfast",
+    "spicy": true
+  },
+  {
+    "id": 7,
+    "name": "Chechebsa",
+    "price": 120,
+    "category": "Breakfast",
+    "spicy": false
+  },
+  {
+    "id": 8,
+    "name": "Burger",
+    "price": 200,
+    "category": "Fast Food",
+    "spicy": false
+  }
+]
