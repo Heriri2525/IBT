@@ -1,0 +1,635 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f5f5f5;
+  color: #222;
+}
+
+.app {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.header {
+  text-align: center;
+  background-color: #f4b400;
+  padding: 30px;
+  border-radius: 12px;
+  margin-bottom: 30px;
+}
+
+.header h1 {
+  font-size: 36px;
+  margin-bottom: 10px;
+}
+
+.header p {
+  font-size: 18px;
+}
+
+main h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 28px;
+}
+
+/* Category buttons */
+
+.category-bar {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 25px;
+  flex-wrap: wrap;
+}
+
+.chip {
+  border: 1px solid #ccc;
+  background-color: white;
+  padding: 10px 18px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.chip:hover {
+  background-color: #eee;
+}
+
+.chip.on {
+  background-color: #f4b400;
+  border-color: #f4b400;
+  font-weight: bold;
+}
+
+/* Menu */
+
+.menu {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+/* Card */
+
+.card {
+  width: 100%;
+}
+
+.dish {
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 20px;
+  width: 250px;
+  text-align: center;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.dish h3 {
+  font-size: 22px;
+  margin-bottom: 10px;
+}
+
+.dish p {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+.category {
+  color: #666;
+}
+
+.spicy-badge {
+  display: inline-block;
+  background-color: #ffdddd;
+  color: red;
+  padding: 5px 10px;
+  border-radius: 15px;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.quantity {
+  margin-top: 10px;
+}
+
+/* Add button */
+
+.add-button {
+  background-color: #f4b400;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  margin-top: 5px;
+}
+
+.add-button:hover {
+  background-color: #d99f00;
+}
+
+/* Order total */
+
+.order-total {
+  text-align: center;
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 20px;
+  margin: 30px 0;
+}
+
+.order-total h2 {
+  margin: 0;
+}
+
+/* Order form */
+
+.order-form {
+  background-color: white;
+  max-width: 500px;
+  margin: 30px auto;
+  padding: 25px;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+}
+
+.order-form h2 {
+  margin-bottom: 20px;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: bold;
+}
+
+.form-group input,
+.form-group select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 16px;
+}
+
+.error {
+  color: red;
+  font-size: 14px;
+  margin-top: 5px;
+}
+
+/* Pay button */
+
+.pay-button {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 6px;
+  background-color: #f4b400;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.pay-button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+/* Empty state */
+
+.empty-message {
+  text-align: center;
+  width: 100%;
+  padding: 20px;
+  font-size: 18px;
+}
+
+/* Loading state */
+
+.loading {
+  text-align: center;
+  width: 100%;
+  padding: 20px;
+  font-size: 18px;
+}
+
+/* API error box */
+
+.api-error {
+  text-align: center;
+  width: 100%;
+  padding: 20px;
+  background-color: #fff0f0;
+  border: 1px solid #ffaaaa;
+  border-radius: 10px;
+  color: red;
+}
+
+.retry-button {
+  background-color: #f4b400;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.retry-button:hover {
+  background-color: #d99f00;
+}
+
+/* Search */
+
+.search-label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+}
+
+.search-input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 16px;
+}
+
+.search-input:focus {
+  outline: 2px solid #f4b400;
+}
+
+/* Responsive */
+
+@media (max-width: 650px) {
+  .app {
+    padding: 15px;
+  }
+
+  .menu {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card {
+    width: 100%;
+    max-width: 300px;
+  }
+
+  .dish {
+    width: 100%;
+  }
+
+  .category-bar {
+    flex-direction: column;
+  }
+
+  .chip {
+    width: 100%;
+  }
+}
+/* ---------- Day 30 additions ---------- */
+
+.layout {
+  display: grid;
+  grid-template-columns: 1fr 340px;
+  gap: 24px;
+  align-items: start;
+}
+
+.header-top {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+}
+
+.header-top h1 {
+  margin-bottom: 0;
+}
+
+.cart-badge {
+  background: #222;
+  color: #fff;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-weight: bold;
+}
+
+.checkout {
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 20px;
+  position: sticky;
+  top: 20px;
+}
+
+.checkout h2 {
+  margin-bottom: 12px;
+}
+
+.cart-list {
+  list-style: none;
+}
+
+.cart-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.qty-controls {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.qty-controls button {
+  width: 28px;
+  height: 28px;
+  border: 1px solid #ccc;
+  background: white;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.qty-controls .remove {
+  color: red;
+}
+
+.order-total {
+  margin: 16px 0;
+  padding: 12px;
+}
+
+.order-total h2 {
+  font-size: 20px;
+  margin: 0;
+}
+
+.clear-button {
+  width: 100%;
+  margin-top: 8px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  background: white;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.clear-button:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.success {
+  color: #1a7f37;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.menu-section .order-form {
+  margin: 0 auto 25px;
+}
+
+@media (max-width: 900px) {
+  .layout {
+    grid-template-columns: 1fr;
+  }
+  .checkout {
+    position: static;
+  }
+}
+
+/* ---------- Theme, stats, simulate-error ---------- */
+
+.theme-toggle {
+  border: 1px solid #222;
+  background: transparent;
+  padding: 6px 12px;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.stats {
+  text-align: center;
+  margin-top: 24px;
+  color: #666;
+}
+
+.sim-error {
+  display: block;
+  text-align: center;
+  margin-bottom: 16px;
+  font-size: 14px;
+  color: #666;
+}
+
+.app[data-theme="dark"] {
+  background: #1b1b1b;
+  color: #eee;
+  border-radius: 12px;
+}
+
+.app[data-theme="dark"] .dish,
+.app[data-theme="dark"] .checkout,
+.app[data-theme="dark"] .order-form,
+.app[data-theme="dark"] .chip:not(.on),
+.app[data-theme="dark"] .clear-button,
+.app[data-theme="dark"] .qty-controls button {
+  background: #2a2a2a;
+  color: #eee;
+  border-color: #444;
+}
+
+.app[data-theme="dark"] .search-input {
+  background: #1b1b1b;
+  color: #eee;
+  border-color: #555;
+}
+
+.app[data-theme="dark"] .category,
+.app[data-theme="dark"] .stats,
+.app[data-theme="dark"] .sim-error {
+  color: #aaa;
+}
+
+/* ---------- Day 31: routing ---------- */
+
+.page { margin-bottom: 30px; }
+.page > h2 { text-align: center; margin-bottom: 20px; font-size: 28px; }
+
+.brand { color: inherit; text-decoration: none; }
+.badge-link { text-decoration: none; }
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 8px 12px;
+  margin-bottom: 24px;
+}
+.nav-link {
+  color: #222;
+  text-decoration: none;
+  padding: 8px 14px;
+  border-radius: 8px;
+}
+.nav-link:hover { background: #eee; }
+.nav-link.on { background: #f4b400; font-weight: bold; }
+.nav-spacer { flex: 1; }
+.who { font-size: 14px; color: #666; }
+.link-button {
+  background: none; border: none; cursor: pointer;
+  text-decoration: underline; font-size: 14px; color: inherit;
+}
+
+.dish-link { color: inherit; text-decoration: none; }
+.dish-link:hover { text-decoration: underline; }
+.details-link { display: inline-block; margin: 8px 0; color: #b07d00; }
+
+.hero {
+  text-align: center;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  padding: 30px;
+  margin-bottom: 30px;
+}
+.hero p { margin: 10px 0 18px; }
+
+.cta, .pay-button.as-link {
+  display: inline-block;
+  background: #f4b400;
+  color: #222;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 12px 22px;
+  border-radius: 8px;
+}
+.pay-button.as-link { display: block; text-align: center; width: 100%; }
+
+.detail {
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  padding: 30px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+.detail h2 { margin: 12px 0 6px; }
+.detail .description { margin: 14px 0; line-height: 1.5; }
+.detail .price { font-size: 22px; font-weight: bold; margin-bottom: 14px; }
+.back { color: #b07d00; text-decoration: none; }
+
+.cart-page { max-width: 600px; margin: 0 auto; position: static; }
+.not-found { text-align: center; padding: 30px 0; }
+.not-found p { margin: 10px 0 18px; }
+
+.footer {
+  text-align: center;
+  color: #666;
+  font-size: 14px;
+  padding: 20px 0 6px;
+  border-top: 1px solid #ddd;
+}
+
+.empty-message .cta { margin-top: 12px; }
+.error { color: red; font-size: 14px; margin: 8px 0; }
+
+.app[data-theme="dark"] .nav,
+.app[data-theme="dark"] .hero,
+.app[data-theme="dark"] .detail {
+  background: #2a2a2a;
+  color: #eee;
+  border-color: #444;
+}
+.app[data-theme="dark"] .nav-link { color: #eee; }
+.app[data-theme="dark"] .nav-link:hover { background: #3a3a3a; }
+.app[data-theme="dark"] .nav-link.on { color: #222; }
+.app[data-theme="dark"] .form-group input { background: #1b1b1b; color: #eee; border-color: #555; }
+.app[data-theme="dark"] .footer,
+.app[data-theme="dark"] .who { color: #aaa; }
+
+/* ---------- Day 33: forms ---------- */
+
+.order-form { max-width: 560px; }
+
+.form-group textarea,
+.form-group select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 16px;
+  font-family: inherit;
+}
+.form-group textarea { resize: vertical; }
+
+.form-group input:focus-visible,
+.form-group select:focus-visible,
+.form-group textarea:focus-visible,
+.pay-button:focus-visible,
+.summary a:focus-visible {
+  outline: 3px solid #222;
+  outline-offset: 2px;
+}
+
+.hint { font-size: 13px; color: #666; margin-top: 4px; }
+
+/* invalid: thicker border + text + ⚠ mark — readable in greyscale */
+.form-group.invalid input,
+.form-group.invalid select,
+.form-group.invalid textarea {
+  border: 3px solid #b00020;
+}
+.field-error {
+  color: #b00020;
+  font-weight: bold;
+  font-size: 14px;
+  margin-top: 6px;
+}
+
+.summary,
+.submit-error {
+  border: 2px solid #b00020;
+  background: #fff0f0;
+  color: #7a0016;
+  border-radius: 8px;
+  padding: 12px 14px;
+  margin-bottom: 18px;
+}
+.summary ul { margin: 8px 0 0 20px; }
+.summary a { color: #7a0016; }
+.submit-error { font-weight: bold; }
+
+.app[data-theme="dark"] .form-group textarea,
+.app[data-theme="dark"] .form-group select { background: #1b1b1b; color: #eee; border-color: #555; }
+.app[data-theme="dark"] .summary,
+.app[data-theme="dark"] .submit-error { background: #3a1a1f; color: #ffd6dc; }
+.app[data-theme="dark"] .summary a { color: #ffd6dc; }
+.app[data-theme="dark"] .field-error { color: #ff8095; }
+.app[data-theme="dark"] .hint { color: #aaa; }

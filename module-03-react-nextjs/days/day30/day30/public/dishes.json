@@ -1,0 +1,14 @@
+[
+  { "id": 1, "name": "Doro Wat", "price": 320, "category": "Ethiopian", "spicy": true },
+  { "id": 2, "name": "Kitfo", "price": 380, "category": "Ethiopian", "spicy": true },
+  { "id": 3, "name": "Tibs", "price": 290, "category": "Ethiopian", "spicy": false },
+  { "id": 4, "name": "Shiro", "price": 180, "category": "Vegetarian", "spicy": false },
+  { "id": 5, "name": "Misir Wat", "price": 170, "category": "Vegetarian", "spicy": true },
+  { "id": 6, "name": "Gomen", "price": 150, "category": "Vegetarian", "spicy": false },
+  { "id": 7, "name": "Firfir", "price": 140, "category": "Breakfast", "spicy": true },
+  { "id": 8, "name": "Ful", "price": 120, "category": "Breakfast", "spicy": false },
+  { "id": 9, "name": "Chechebsa", "price": 130, "category": "Breakfast", "spicy": true },
+  { "id": 10, "name": "Burger", "price": 250, "category": "Fast Food", "spicy": false },
+  { "id": 11, "name": "Chicken Sandwich", "price": 230, "category": "Fast Food", "spicy": false },
+  { "id": 12, "name": "Fries", "price": 90, "category": "Fast Food", "spicy": false }
+]
