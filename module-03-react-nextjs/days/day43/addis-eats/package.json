@@ -1,0 +1,30 @@
+{
+  "name": "addis-eats",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint",
+    "measure": "node scripts/first-load-js.mjs /menu",
+    "test:api": "node scripts/test-api.mjs",
+    "check:secrets": "node scripts/check-secrets.mjs",
+    "test:auth": "node scripts/test-auth.mjs",
+    "perf": "next build && next start",
+    "check:env": "node scripts/check-env.mjs",
+    "images": "node scripts/image-report.mjs"
+  },
+  "dependencies": {
+    "next": "16.4.3",
+    "react": "19.3.0",
+    "react-dom": "19.3.0",
+    "zod": "^3.25.0"
+  },
+  "devDependencies": {
+    "@tailwindcss/turbopack": "^4",
+    "eslint": "^9",
+    "eslint-config-next": "16.4.3",
+    "tailwindcss": "^4"
+  }
+}
